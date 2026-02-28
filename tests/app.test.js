@@ -77,7 +77,7 @@ describe('Pruebas adicionales - Unitarias e Integración', () => {
       expect(res.text).toMatch(/respond with a resource/);
     });
 
-    test('POST /items - Debe responder 404 para método no implementado', async () => {
+    est('POST /items - Debe responder 404 para método no implementado', async () => {
       const res = await request(app).post('/items').send({ name: 'Test' });
       expect(res.statusCode).toBe(404);
     });

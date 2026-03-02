@@ -8,7 +8,7 @@ export const options = {
 
 export default function () {
   // 1. Probamos la ruta principal (raiz)
-  // CAMBIA "tu-app.render.com" por la URL donde esté subida tu app
+  // CAMBIA "tu-app.render.com" por la URL donde esté subida tu app XD
   let res1 = http.get('https://devops-jacobsin.onrender.com/'); 
   check(res1, { 'status es 200': (r) => r.status === 200 });
 

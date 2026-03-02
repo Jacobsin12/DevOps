@@ -1,0 +1,21 @@
+name: K6 Performance Test
+
+# Esto dice: "Corre esto cada vez que suba algo a la rama master"
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  k6_test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del código
+        uses: actions/checkout@v3
+
+      - name: Ejecutar prueba en K6 Cloud
+        uses: grafana/k6-action@v0.3.1
+        with:
+          filename: script.js
+          cloud: true
+          # Aquí es donde GitHub usará el token que guardaste en Settings
+          token: ${{ secrets.K6_CLOUD_TOKEN }}
